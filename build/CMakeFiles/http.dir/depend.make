@@ -4,3 +4,6 @@
 CMakeFiles/http.dir/src/main.cpp.o: ../include/socket/socket.h
 CMakeFiles/http.dir/src/main.cpp.o: ../src/main.cpp
 
+CMakeFiles/http.dir/src/socket.cpp.o: ../include/socket/socket.h
+CMakeFiles/http.dir/src/socket.cpp.o: ../src/socket.cpp
+

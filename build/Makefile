@@ -150,6 +150,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/socket.o: src/socket.cpp.o
+
+.PHONY : src/socket.o
+
+# target to build an object file
+src/socket.cpp.o:
+	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.o
+.PHONY : src/socket.cpp.o
+
+src/socket.i: src/socket.cpp.i
+
+.PHONY : src/socket.i
+
+# target to preprocess a source file
+src/socket.cpp.i:
+	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.i
+.PHONY : src/socket.cpp.i
+
+src/socket.s: src/socket.cpp.s
+
+.PHONY : src/socket.s
+
+# target to generate assembly for a file
+src/socket.cpp.s:
+	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.s
+.PHONY : src/socket.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/socket.o"
+	@echo "... src/socket.i"
+	@echo "... src/socket.s"
 .PHONY : help
 
 

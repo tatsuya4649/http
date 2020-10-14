@@ -4,4 +4,4 @@ project(http)
 
 include_directories( ./include ./src )
 
-add_executable( http ./src/main.cpp )
+add_executable( http ./src/main.cpp ./src/socket.cpp)

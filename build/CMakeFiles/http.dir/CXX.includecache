@@ -9,10 +9,14 @@
 ../include/socket/socket.h
 sys/socket.h
 -
-
-/home/tatsuya/Desktop/http/src/main.cpp
-socket/socket.h
--
 iostream
+-
+netinet/in.h
+-
+string.h
+-
+
+/home/tatsuya/Desktop/http/src/socket.cpp
+socket/socket.h
 -
 
