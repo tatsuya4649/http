@@ -22,16 +22,20 @@
 // By connecting PCs in this class,
 // you can talk in almost the same way as exchanging files.
 // reference : https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa
-
+#ifndef __SOCKET
+#define __SOCKET
 #include <sys/socket.h>
 #include <iostream>
 #include <netinet/in.h>
 #include <string.h>
+#include <unistd.h>
+#include <string>
 
 #define __PORT 8000
+#define __BUFFER_SIZE 30000
+#define __MAX_PENDING 10
 // how many times the size of the char type
 using addr_mem_len = unsigned int; 
-
 class Socket{
 private:
 	int server_fd;
@@ -60,6 +64,4 @@ private:
 	// "accept"
 	int _accept();
 };
-
-	
-
+#endif //__SOCKET

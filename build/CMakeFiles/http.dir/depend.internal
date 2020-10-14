@@ -5,5 +5,6 @@ CMakeFiles/http.dir/src/main.cpp.o
  ../include/socket/socket.h
  /home/tatsuya/Desktop/http/src/main.cpp
 CMakeFiles/http.dir/src/socket.cpp.o
+ ../include/socket/buffer.h
  ../include/socket/socket.h
  /home/tatsuya/Desktop/http/src/socket.cpp

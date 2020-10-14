@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/socket/buffer.h
+socket/socket.h
+-
+
 ../include/socket/socket.h
 sys/socket.h
 -
@@ -15,8 +19,14 @@ netinet/in.h
 -
 string.h
 -
+unistd.h
+-
+string
+-
 
 /home/tatsuya/Desktop/http/src/socket.cpp
 socket/socket.h
+-
+socket/buffer.h
 -
 
