@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/socket/socket.h
+sys/socket.h
+-
+
+/home/tatsuya/Desktop/http/src/main.cpp
+socket/socket.h
+-
+iostream
+-
+
