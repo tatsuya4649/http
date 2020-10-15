@@ -39,7 +39,7 @@ namespace Socket{
 			std::cout << buffer.buf << '\n';
 			std::string hello{"Hello from server"};
 			write(buffer.socket_fd, hello.c_str() , hello.size());
-			std::cout << "~~~~~~~~~~~ send message to customers ~~~~~~~~~~~";
+			std::cout << "~~~~~~~~~~~ send message to clients ~~~~~~~~~~~";
 			close(new_socket);
 		}
 	}

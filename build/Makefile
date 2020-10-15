@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/tatsuya/Desktop/http/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named http
+# Target rules for targets named _client
 
 # Build rule for target.
-http: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 http
-.PHONY : http
+_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _client
+.PHONY : _client
 
 # fast build rule for target.
-http/fast:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/build
-.PHONY : http/fast
+_client/fast:
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/build
+.PHONY : _client/fast
+
+#=============================================================================
+# Target rules for targets named _server
+
+# Build rule for target.
+_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _server
+.PHONY : _server
+
+# fast build rule for target.
+_server/fast:
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/build
+.PHONY : _server/fast
 
 src/main.o: src/main.cpp.o
 
@@ -129,7 +142,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -138,7 +151,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -147,7 +160,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/socket.o: src/socket.cpp.o
@@ -156,7 +169,7 @@ src/socket.o: src/socket.cpp.o
 
 # target to build an object file
 src/socket.cpp.o:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.o
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/socket.cpp.o
 .PHONY : src/socket.cpp.o
 
 src/socket.i: src/socket.cpp.i
@@ -165,7 +178,7 @@ src/socket.i: src/socket.cpp.i
 
 # target to preprocess a source file
 src/socket.cpp.i:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.i
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/socket.cpp.i
 .PHONY : src/socket.cpp.i
 
 src/socket.s: src/socket.cpp.s
@@ -174,7 +187,7 @@ src/socket.s: src/socket.cpp.s
 
 # target to generate assembly for a file
 src/socket.cpp.s:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/src/socket.cpp.s
+	$(MAKE) -f CMakeFiles/_server.dir/build.make CMakeFiles/_server.dir/src/socket.cpp.s
 .PHONY : src/socket.cpp.s
 
 test/client/client.o: test/client/client.cpp.o
@@ -183,7 +196,7 @@ test/client/client.o: test/client/client.cpp.o
 
 # target to build an object file
 test/client/client.cpp.o:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/test/client/client.cpp.o
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/client.cpp.o
 .PHONY : test/client/client.cpp.o
 
 test/client/client.i: test/client/client.cpp.i
@@ -192,7 +205,7 @@ test/client/client.i: test/client/client.cpp.i
 
 # target to preprocess a source file
 test/client/client.cpp.i:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/test/client/client.cpp.i
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/client.cpp.i
 .PHONY : test/client/client.cpp.i
 
 test/client/client.s: test/client/client.cpp.s
@@ -201,8 +214,35 @@ test/client/client.s: test/client/client.cpp.s
 
 # target to generate assembly for a file
 test/client/client.cpp.s:
-	$(MAKE) -f CMakeFiles/http.dir/build.make CMakeFiles/http.dir/test/client/client.cpp.s
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/client.cpp.s
 .PHONY : test/client/client.cpp.s
+
+test/client/send.o: test/client/send.cpp.o
+
+.PHONY : test/client/send.o
+
+# target to build an object file
+test/client/send.cpp.o:
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/send.cpp.o
+.PHONY : test/client/send.cpp.o
+
+test/client/send.i: test/client/send.cpp.i
+
+.PHONY : test/client/send.i
+
+# target to preprocess a source file
+test/client/send.cpp.i:
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/send.cpp.i
+.PHONY : test/client/send.cpp.i
+
+test/client/send.s: test/client/send.cpp.s
+
+.PHONY : test/client/send.s
+
+# target to generate assembly for a file
+test/client/send.cpp.s:
+	$(MAKE) -f CMakeFiles/_client.dir/build.make CMakeFiles/_client.dir/test/client/send.cpp.s
+.PHONY : test/client/send.cpp.s
 
 # Help Target
 help:
@@ -210,9 +250,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... http"
+	@echo "... _client"
+	@echo "... rebuild_cache"
+	@echo "... _server"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -222,6 +263,9 @@ help:
 	@echo "... test/client/client.o"
 	@echo "... test/client/client.i"
 	@echo "... test/client/client.s"
+	@echo "... test/client/send.o"
+	@echo "... test/client/send.i"
+	@echo "... test/client/send.s"
 .PHONY : help
 
 

@@ -12,8 +12,8 @@ namespace Socket{
 	}
 	
 	int Client::_make(){
-		server_fd = socket(AF_INET,SOCK_STREAM,0);
-		return server_fd;
+		sock = socket(AF_INET,SOCK_STREAM,0);
+		return sock;
 	}
 	int Client::_addr_binary(){
 		return inet_pton(AF_INET,"127.0.0.1",&address.sin_addr);
@@ -22,9 +22,19 @@ namespace Socket{
 		return connect(sock,(struct sockaddr*)&address,sizeof(address));
 	}
 	void Client::ready(){
-		_make();
-		_addr_binary();
-		_connect();
+		if (_make() == -1){
+			std::cerr << "error in 'make' of client\n";
+			std::exit(EXIT_FAILURE);
+		}
+		if (_addr_binary() <= 0){
+			std::cerr << "error in '_addr_binary' of client\n";	
+			std::exit(EXIT_FAILURE);
+		}
+		
+		if (_connect() == -1){
+			std::cerr << "error in '_connect' of client\n";
+			std::exit(EXIT_FAILURE);
+		}
 	}
 	void Client::_send(){
 		send(sock,hello.c_str(),hello.size(),0);

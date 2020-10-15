@@ -24,29 +24,15 @@ unistd.h
 string
 -
 
-../test/client/client.h
-socket/socket.h
--
-arpa/inet.h
--
-
 /home/tatsuya/Desktop/http/src/main.cpp
 socket/socket.h
--
-client/client.h
 -
 iostream
 -
 
-/home/tatsuya/Desktop/http/test/client/client.cpp
-client.h
-/home/tatsuya/Desktop/http/test/client/client.h
-socket/buffer.h
--
-
-/home/tatsuya/Desktop/http/test/client/client.h
+/home/tatsuya/Desktop/http/src/socket.cpp
 socket/socket.h
 -
-arpa/inet.h
+socket/buffer.h
 -
 

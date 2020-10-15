@@ -8,7 +8,6 @@
 namespace Socket{
 	class Client{
 	private:
-		int server_fd;
 		int sock = 0;
 		long valread;
 		std::string hello{"Hello from client"};

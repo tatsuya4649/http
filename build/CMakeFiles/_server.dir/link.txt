@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/_server.dir/src/main.cpp.o CMakeFiles/_server.dir/src/socket.cpp.o  -o _server 

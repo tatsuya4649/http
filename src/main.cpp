@@ -1,13 +1,12 @@
 #include <socket/socket.h>
-#include <client/client.h>
 #include <iostream>
 
 int main()
 {
+	using __socket = Socket::Socket;
 	// server side
-	Socket::Socket server{AF_INET,__PORT,in_addr{INADDR_ANY}};
+	__socket server{AF_INET,__PORT,in_addr{INADDR_ANY}};
 	server.ready();
+	// waiting for message
 	server.open_socket();
-	// client side
-	
 }
