@@ -26,16 +26,29 @@ namespace Socket{
 		return accept(server_fd,(struct sockaddr*)&address,(socklen_t*)&add_len);
 	}
 	void Socket::ready(){
-		_make();
-		_bind();
-		_listen();
+		if (_make() == -1){
+			std::cerr << "error in '_make' of server \n";
+			exit(EXIT_FAILURE);
+		}
+		if (_bind() == -1){
+			std::cerr << "error in '_bind' of server \n";
+			exit(EXIT_FAILURE);
+		}
+		if (_listen() == -1){
+			std::cerr << "error in '_listen' of server \n";
+			exit(EXIT_FAILURE);
+		}	
+
 	}
 	void Socket::open_socket(){
 		while(true){
 			std::cout << "\n ~~~~~~~~~~~ waiting for new connection ~~~~~~~~~~~~  \n" << std::endl;
-			_accept();
+			if (_accept() == -1){	
+				std::cerr << "error in '_accept' of server \n";
+				exit(EXIT_FAILURE);
+			}
 			__buffer buffer{new_socket,__BUFFER_SIZE};
-			valread = read(buffer.socket_fd,buffer.buf,buffer.size);
+			valread = read(socke_fd,buffer.buf,buffer.size);
 			std::cout << buffer.buf << '\n';
 			std::string hello{"Hello from server"};
 			write(buffer.socket_fd, hello.c_str() , hello.size());

@@ -24,12 +24,6 @@ unistd.h
 string
 -
 
-/home/tatsuya/Desktop/http/src/main.cpp
-socket/socket.h
--
-iostream
--
-
 /home/tatsuya/Desktop/http/src/socket.cpp
 socket/socket.h
 -
