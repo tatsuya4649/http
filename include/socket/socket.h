@@ -31,37 +31,39 @@
 #include <unistd.h>
 #include <string>
 
-#define __PORT 8000
+#define __PORT 8080
 #define __BUFFER_SIZE 30000
 #define __MAX_PENDING 10
-// how many times the size of the char type
-using addr_mem_len = unsigned int; 
-class Socket{
-private:
-	int server_fd;
-	int new_socket;
-	long valread;
-	struct sockaddr_in address;
-	addr_mem_len add_len = sizeof(address);
-public:
-	explicit Socket(sa_family_t,in_port_t,struct in_addr);
-	Socket() = delete;
-	Socket(Socket&) = delete;
-	Socket(const Socket&) = delete;
-	Socket(Socket&&) = delete;
-	Socket(const Socket&&) = delete;
-	// "make" and "bind" to ready waiting for customers
-	void ready();
-	// "accept" to processing when there is a connection
-	void open_socket();
-private:
-	// "make" socket at first
-	int _make();
-	// "bind" specific IP Adress(server IP) and Port
-	int _bind();
-	// "listen"
-	int _listen();
-	// "accept"
-	int _accept();
-};
+namespace Socket{
+	// how many times the size of the char type
+	using addr_mem_len = unsigned int; 
+	class Socket{
+	private:
+		int server_fd;
+		int new_socket;
+		long valread;
+		struct sockaddr_in address;
+		addr_mem_len add_len = sizeof(address);
+	public:
+		explicit Socket(sa_family_t,in_port_t,struct in_addr);
+		Socket() = delete;
+		Socket(Socket&) = delete;
+		Socket(const Socket&) = delete;
+		Socket(Socket&&) = delete;
+		Socket(const Socket&&) = delete;
+		// "make" and "bind" to ready waiting for customers
+		void ready();
+		// "accept" to processing when there is a connection
+		void open_socket();
+	private:
+		// "make" socket at first
+		int _make();
+		// "bind" specific IP Adress(server IP) and Port
+		int _bind();
+		// "listen"
+		int _listen();
+		// "accept"
+		int _accept();
+	};
+}
 #endif //__SOCKET

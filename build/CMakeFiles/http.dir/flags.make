@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/tatsuya/Desktop/http/./include -I/home/tatsuya/Desktop/http/./src 
+CXX_INCLUDES = -I/home/tatsuya/Desktop/http/./include -I/home/tatsuya/Desktop/http/./src -I/home/tatsuya/Desktop/http/./test 
 

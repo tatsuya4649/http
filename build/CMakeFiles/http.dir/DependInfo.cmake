@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/tatsuya/Desktop/http/src/main.cpp" "/home/tatsuya/Desktop/http/build/CMakeFiles/http.dir/src/main.cpp.o"
   "/home/tatsuya/Desktop/http/src/socket.cpp" "/home/tatsuya/Desktop/http/build/CMakeFiles/http.dir/src/socket.cpp.o"
+  "/home/tatsuya/Desktop/http/test/client/client.cpp" "/home/tatsuya/Desktop/http/build/CMakeFiles/http.dir/test/client/client.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,6 +14,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././include"
   ".././src"
+  ".././test"
   )
 
 # Targets to which this target links.
