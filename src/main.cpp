@@ -4,5 +4,10 @@
 
 int main()
 {
-	std::cout << "Hello,socket" << std::endl;
+	// server side
+	Socket::Socket server{AF_INET,__PORT,in_addr{INADDR_ANY}};
+	server.ready();
+	server.open_socket();
+	// client side
+	
 }
